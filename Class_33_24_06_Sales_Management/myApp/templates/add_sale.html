@@ -1,0 +1,35 @@
+{% extends "inc/base.html" %}
+
+{% block main %}
+    <h1>Add Sale Info</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+  <label for="fname">Product Name</label>
+  <input type="text" id="fname" name="product_name" placeholder="product_name..">
+
+  <label for="country">Category</label>
+  
+    <select id="country" name="category">       
+    {% for d in data %}
+        <option value="{{d.id}}">{{d.title}}</option>
+    {% endfor %}
+        
+  </select>
+
+  <label for="lname">Unit Price</label>
+  <input type="number" id="lname" name="unit_price" placeholder="unit price..">
+
+  <label for="lname">Quantity</label>
+  <input type="number" id="lname" name="quantity" placeholder="quantity..">
+
+  <label for="lname">Discount Percent</label>
+  <input type="number" id="lname" name="discount_percent" placeholder="discount percent..">
+
+  <label for="lname">Tax Percent</label>
+  <input type="number" id="lname" name="tax_percent" placeholder="tax percent..">
+  
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock main %}
+

@@ -1,0 +1,43 @@
+{% extends "inc/base.html" %}
+
+{% block main %}
+<div class="suc">
+        {% include "inc/msg.html" %}
+</div>
+<h1>
+    Sales List
+</h1>
+    <table>
+        <tr>
+            <th>SN</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Discount Percent</th>
+            <th>Tax Percent</th>
+            <th>Total Price</th>
+            <th>Date</th>
+        </tr>
+
+        
+        {% for d in data %}
+
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{d.product_name}}</td>
+            <td>{{d.category}}</td>
+            <td>{{d.unit_price}}</td>
+            <td>{{d.quantity}}</td>
+            <td>{{d.discount_percent}}%</td>
+            <td>{{d.tax_percent}}%</td>
+            <td>{{d.total_price}}</td>
+            <td>{{d.sale_date}}</td>
+        </tr>
+            
+        {% endfor %}
+            
+    </table>
+
+{% endblock main %}
+

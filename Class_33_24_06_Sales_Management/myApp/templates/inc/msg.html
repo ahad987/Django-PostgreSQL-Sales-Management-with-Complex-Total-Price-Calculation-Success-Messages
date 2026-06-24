@@ -1,0 +1,22 @@
+{% comment %} {% if messages %}
+  {% for m in messages %}
+
+  <div class="alert-box success-alert">
+  <span class="alert-icon">✓</span>
+  <div class="alert-content">
+    <strong> {{m}} </strong>
+  </div>
+</div>
+  {% endfor %}
+{% endif %}
+ {% endcomment %}
+
+{% if messages %}
+  {% for m in messages %}
+ <div class="w3-panel w3-pale-green w3-border">
+  <h3>Success!</h3>
+  <p>{{m}}</p>
+</div>
+
+  {% endfor %}
+{% endif %}
